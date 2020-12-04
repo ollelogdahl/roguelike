@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 
-#include "easylogging/easylogging++.h"
+#include <easylogging/easylogging++.h>
 
 template <typename T>
 class Registry {

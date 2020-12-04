@@ -4,7 +4,7 @@
 
 #include "action.h"
 #include "actionResult.h"
-#include "easylogging/easylogging++.h"
+#include <easylogging/easylogging++.h>
 #include "monster.h"
 #include "sdlHandler.h"
 #include "keyboard.h"

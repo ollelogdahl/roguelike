@@ -1,6 +1,6 @@
 #include "subTexture.h"
 
-#include "easylogging/easylogging++.h"
+#include <easylogging/easylogging++.h>
 
 SubTexture::SubTexture(SDL_Rect *r) : textureRect(r) {}
 SubTexture::SubTexture() {}

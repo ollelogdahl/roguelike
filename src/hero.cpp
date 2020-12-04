@@ -1,7 +1,7 @@
 #include "hero.h"
 
 #include "direction.h"
-#include "easylogging/easylogging++.h"
+#include <easylogging/easylogging++.h>
 #include "keyboard.h"
 #include "walkAction.h"
 #include "closeDoorAction.h"

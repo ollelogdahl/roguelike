@@ -1,6 +1,6 @@
 #include "map.h"
 
-#include "easylogging/easylogging++.h"
+#include <easylogging/easylogging++.h>
 
 
 Map::Map(int width, int height) : mapSize(width,height) {

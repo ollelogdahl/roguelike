@@ -1,6 +1,6 @@
 #pragma once
 
-#include "easylogging/easylogging++.h"
+#include <easylogging/easylogging++.h>
 
 #include <iostream>
 #include <algorithm>

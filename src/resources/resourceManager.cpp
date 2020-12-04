@@ -3,7 +3,7 @@
 #include <filesystem>
 #include <iostream>
 
-#include "easylogging/easylogging++.h"
+#include <easylogging/easylogging++.h>
 #include "pugixml.hpp"
 #include "textureAtlas.h"
 

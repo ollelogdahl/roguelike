@@ -4,7 +4,7 @@
 #include "sdlHandler.h"
 #include "engine.h"
 
-#include "easylogging/easylogging++.h"
+#include <easylogging/easylogging++.h>
 
 #include "textureAtlas.h"
 

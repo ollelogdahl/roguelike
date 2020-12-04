@@ -1,6 +1,6 @@
 #include "keyboard.h"
 
-#include "easylogging/easylogging++.h"
+#include <easylogging/easylogging++.h>
 
 namespace Keyboard {
 

@@ -1,6 +1,6 @@
 #include "textureAtlas.h"
 
-#include "easylogging/easylogging++.h"
+#include <easylogging/easylogging++.h>
 #include "registry.h"
 #include "subTexture.h"
 
