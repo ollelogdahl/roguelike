@@ -6,33 +6,26 @@
 
 #include <easylogging/easylogging++.h>
 
+template <typename T>
+using pt_map = std::map<std::string, std::shared_ptr<T>>;
+
 // A object holding a dictionary for parsed items.
+// Every registry entry owns the object. Objects are only removed when
+// The registry is deconstructed.
 template <typename T>
 class Registry {
- public:
-  Registry() {
-    // All registries have a missing type.
-    //registerObject(T(), "missing");
-    objects = std::map<std::string, T>();
-  }
+public:
+  Registry() : objects() {}
 
-  void registerObject(T object, std::string id) {
-    auto entry = std::pair<std::string, T>(id, object);
-    objects.insert(entry);
-  }
+  // Add a new object to the registry.
+  void registerObject(std::shared_ptr<T> object, std::string id);
 
-  T getObject(std::string id) {
-    if(objects.count(id) > 0)
-      return objects[id];
-    
-    LOG(WARNING) << "Missing registry entry '" << id << "'.";
-    return objects["missing"];
-  }
+  // Gets an object from the registry.
+  std::shared_ptr<T> getObject(std::string id);
 
-  int getSize() {
-    return objects.size();
-  }
+  // Gets the number of objects in registry.
+  int getSize();
 
- private:
-  std::map<std::string, T> objects;
+private:
+  pt_map<T> objects;
 };

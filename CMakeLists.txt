@@ -3,6 +3,8 @@ project(roguelike VERSION 0.2.2)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_CXX_FLAGS "-Wfatal-errors")
+
 set(CMAKE_BUILD_TYPE Debug)
 
 # Provide custom FindSDL2 and FindSDL2_image scripts.
@@ -44,6 +46,7 @@ add_executable(roguelike
     # rougelike code
     src/math/vec2.cpp
 
+    src/resources/registry.cpp
     src/resources/resourceManager.cpp
     src/resources/textureAtlas.cpp
 
