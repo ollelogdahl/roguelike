@@ -74,4 +74,4 @@ jobs:
       uses: actions/upload-artifact@v2.2.1
       with:
         name: Build
-        path: ${{runner.workspace}}/build/roguelike
+        path: ${{runner.workspace}}/build
