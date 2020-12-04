@@ -6,12 +6,14 @@
 
 #include <easylogging/easylogging++.h>
 
+// A object holding a dictionary for parsed items.
 template <typename T>
 class Registry {
  public:
   Registry() {
-  //    objects = std::map<std::string, T>()
-    registerObject(T(), "missing");
+    // All registries have a missing type.
+    //registerObject(T(), "missing");
+    objects = std::map<std::string, T>();
   }
 
   void registerObject(T object, std::string id) {
@@ -23,7 +25,7 @@ class Registry {
     if(objects.count(id) > 0)
       return objects[id];
     
-    LOG(WARNING) << "Missing registry entry " << id;
+    LOG(WARNING) << "Missing registry entry '" << id << "'.";
     return objects["missing"];
   }
 

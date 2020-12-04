@@ -1,4 +1,5 @@
 #include "renderHelper.h"
+#include "resources/textureAtlas.h"
 
 namespace RenderHelper {
 

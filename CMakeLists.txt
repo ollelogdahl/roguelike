@@ -44,6 +44,9 @@ add_executable(roguelike
     # rougelike code
     src/math/vec2.cpp
 
+    src/resources/resourceManager.cpp
+    src/resources/textureAtlas.cpp
+
     src/actionResult.cpp
     src/actor.cpp
     src/attackAction.cpp
@@ -66,10 +69,7 @@ add_executable(roguelike
     src/openDoorAction.cpp
     src/pickupItemAction.cpp
     src/renderHelper.cpp
-    src/resourceManager.cpp
     src/sdlHandler.cpp
-    src/subTexture.cpp
-    src/textureAtlas.cpp
     src/walkAction.cpp
     src/worldGenerator.cpp
 )

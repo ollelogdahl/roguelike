@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "resourceManager.h"
+#include "resources/resourceManager.h"
 #include "item.h"
 
 struct ItemStack {

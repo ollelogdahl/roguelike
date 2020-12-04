@@ -1,12 +1,12 @@
 #include <iostream>
 
-#include "resourceManager.h"
+#include "resources/resourceManager.h"
 #include "sdlHandler.h"
 #include "engine.h"
 
 #include <easylogging/easylogging++.h>
 
-#include "textureAtlas.h"
+#include "resources/textureAtlas.h"
 
 #include "cmake_config.h"
 

@@ -7,8 +7,8 @@
 #include "closeDoorAction.h"
 #include "pickupItemAction.h"
 
-#include "resourceManager.h"
-#include "textureAtlas.h"
+#include "resources/resourceManager.h"
+#include "resources/textureAtlas.h"
 
 Hero::Hero(const std::string heroClassId, Vec2 position)
     : Actor(position),

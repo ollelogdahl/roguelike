@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include <easylogging/easylogging++.h>
-#include "textureAtlas.h"
+#include "resources/textureAtlas.h"
 
 namespace SDLHandler {
 

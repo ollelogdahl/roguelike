@@ -3,8 +3,8 @@
 #include <string>
 
 #include "itemStack.h"
-#include "resourceManager.h"
-#include "textureAtlas.h"
+#include "resources/resourceManager.h"
+#include "resources/textureAtlas.h"
 
 struct ItemEntity {
   ItemStack itemStack;

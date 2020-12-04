@@ -2,7 +2,6 @@
 
 #include <easylogging/easylogging++.h>
 #include "registry.h"
-#include "subTexture.h"
 
 namespace TextureAtlas {
 // List of textures not yet baked
@@ -124,7 +123,7 @@ void createAtlas(SDL_Renderer* renderer) {
 
 void renderTexture(SDL_Renderer* renderer, std::string textureId, int spriteIndex, Vec2 dest, int scale) {
   auto subTex = subTextures.getObject(textureId);
-  SDL_Rect* srcRect = subTex.getSprite(spriteIndex);
+  SDL_Rect* srcRect = subTex.getSpriteRect(spriteIndex);
   if (srcRect == nullptr) return;
 
   SDL_Rect destRect;
@@ -143,6 +142,28 @@ void renderCopy(SDL_Renderer* renderer, SDL_Rect* source, SDL_Rect* dest) {
   }
 
   SDL_RenderCopy(renderer, atlasTexture, source, dest);
+}
+
+SubTexture::SubTexture(SDL_Rect *r) : textureRect(r) {}
+SubTexture::SubTexture() : textureRect(nullptr) {}
+
+SubTexture::~SubTexture() {
+  //delete textureRect;
+}
+
+SDL_Rect *SubTexture::getSpriteRect(int spriteIndex) {
+  SDL_Rect *srcRect = new SDL_Rect();
+  srcRect->x = textureRect->x + 8 * (spriteIndex % (textureRect->w/8));
+  srcRect->y = textureRect->y + 8 * (spriteIndex / (textureRect->w/8));
+  srcRect->w = 8;
+  srcRect->h = 8;
+
+  if (srcRect->y >= textureRect->y + textureRect->h) {
+    LOG(WARNING) << "Sprite Index " << spriteIndex << " is outside texture!";
+    return nullptr;
+  }
+
+  return srcRect;
 }
 
 namespace details {

@@ -1,7 +1,7 @@
 #include "monster.h"
 
-#include "resourceManager.h"
-#include "textureAtlas.h"
+#include "resources/resourceManager.h"
+#include "resources/textureAtlas.h"
 
 #include "walkAction.h"
 
