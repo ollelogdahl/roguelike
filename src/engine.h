@@ -8,7 +8,7 @@
 #include "game.h"
 class Engine {
 public:
-  default Engine();
+  Engine() = default;
   ~Engine() {}
 
   void init();

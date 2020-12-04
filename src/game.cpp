@@ -1,5 +1,14 @@
 #include "game.h"
 
+Game::Game() : level(WorldGenerator::nextLevel()) {
+    player = new Hero("core.knight", Vec2(14, 16));
+    // addActor(std::make_unique<Hero>("core.knight", Vec2(14, 16)));
+    addActor(std::unique_ptr<Actor>{player});
+
+    // move player to entryPoint
+    player->pos = level.entryPoint + Vec2(1,0);
+  };
+
 Actor* Game::actorAt(Vec2 pos) {
   if(player->pos == pos) {
     return player;

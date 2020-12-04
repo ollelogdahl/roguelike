@@ -16,7 +16,7 @@ void Engine::init() {
   Keyboard::init();
 
   // Create the game
-  game = new Game();
+  game = std::unique_ptr<Game>(new Game());
 }
 
 void Engine::update() {

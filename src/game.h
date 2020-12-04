@@ -10,21 +10,9 @@
 #include "worldGenerator.h"
 
 class Game {
- private:
-  Hero* player;
-  GameLevel level;
+public:
+  Game();
 
-  Game() :  // player(Hero("core.knight", Vec2(14, 16))),
-           level(WorldGenerator::nextLevel()) {
-    player = new Hero("core.knight", Vec2(14, 16));
-    // addActor(std::make_unique<Hero>("core.knight", Vec2(14, 16)));
-    addActor(std::unique_ptr<Actor>{player});
-
-    // move player to entryPoint
-    player->pos = level.entryPoint + Vec2(1,0);
-  };
-
- public:
   Game(const Game&) = delete;
   Game& operator=(const Game&) = delete;
 
@@ -54,4 +42,8 @@ class Game {
 
   Hero* getPlayer();
   Map& getMap();
+
+ private:
+  Hero* player;
+  GameLevel level;
 };
