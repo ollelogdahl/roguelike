@@ -48,7 +48,7 @@ jobs:
           mkdir -p ~/deps
           for dep in libsdl2-dev libsdl2-image-dev libpugixml-dev; do
             dpkg -L $dep | while IFS= read -r f; do if test -f $f; then echo $f; fi; done |
-              xargs cp --parents --target-directory ~/sdl2/
+              xargs cp --parents --target-directory ~/deps/
           done
         fi
 
