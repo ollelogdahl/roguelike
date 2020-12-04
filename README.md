@@ -9,3 +9,7 @@ Olle Lögdahl, 24 November 2018
 
 ---
 **roguelike** is a C++ game, inspired by rogue and NetHack. Implements a custom engine, xml resource loading, texture atlasing, and more.
+
+<p align="center">
+<img src="https://github.com/ollelogdahl/roguelike/blob/master/media/dungeon.png">
+</p>
