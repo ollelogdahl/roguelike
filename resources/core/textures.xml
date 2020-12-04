@@ -1,0 +1,24 @@
+<Texture>
+	<id>core.font</id>
+	<path>font.png</path>
+</Texture>
+
+<Texture>
+	<id>core.items</id>
+	<path>textures/items.png</path>
+</Texture>
+
+<Texture>
+	<id>core.equipables</id>
+	<path>textures/equipables.png</path>
+</Texture>
+
+<Texture>
+	<id>core.critters</id>
+	<path>textures/critters.png</path>
+</Texture>
+
+<Texture>
+	<id>core.tileset</id>
+	<path>textures/tileset.png</path>
+</Texture>

@@ -1,0 +1,19 @@
+<Item>
+	<id>core.arrow</id>
+	<label>Arrow</label>
+	<pluralLabel>Arrows</pluralLabel>
+
+	<baseValue>5</baseValue>
+	<mass>0.01</mass>
+	<stackSize>32</stackSize>
+
+	<type>weapon</type>
+	<spawnWeight>100</spawnWeight>
+
+	<texture>core.items</texture>
+  <spriteIndex>3</spriteIndex>
+
+	<description>
+		Pointy. Too big to fit in crossbow.
+	</description>
+</Item>

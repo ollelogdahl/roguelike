@@ -1,0 +1,18 @@
+<Item>
+	<id>core.gold</id>
+	<label>Gold</label>
+
+	<baseValue>1</baseValue>
+	<mass>0.001</mass>
+	<stackSize>999</stackSize>
+
+	<type>valuable</type>
+	<spawnWeight>100</spawnWeight>
+
+	<texture>core.items</texture>
+  <spriteIndex>33</spriteIndex>
+
+	<description>
+		Valuable.
+	</description>
+</Item>

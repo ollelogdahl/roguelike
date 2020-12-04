@@ -1,0 +1,10 @@
+<HeroClass>
+  <id>core.thief</id>
+  <label>Thief</label>
+
+  <baseHp>28</baseHp>
+  <speed>12</speed>
+
+  <texture>core.font</texture>
+  <spriteIndex>64</spriteIndex>
+</HeroClass>

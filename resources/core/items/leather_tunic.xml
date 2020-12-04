@@ -1,0 +1,14 @@
+<Item>
+	<id>core.tunic_leather</id>
+	<label>Leather tunic</label>
+
+	<baseValue>70</baseValue>
+	<stackSize>1</stackSize>
+
+	<texture>core.items</texture>
+  <spriteIndex>5</spriteIndex>
+
+	<description>
+		Minor defences!
+	</description>
+</Item>

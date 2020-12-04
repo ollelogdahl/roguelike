@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Breed>
+  <id>core.bat</id>
+  <label>Bat</label>
+  <baseHp>20</baseHp>
+
+  <speed>4</speed>
+
+  <texture>core.critters</texture>
+  <spriteIndex>1</spriteIndex>
+</Breed>

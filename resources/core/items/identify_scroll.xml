@@ -1,0 +1,24 @@
+<Item>
+	<id>core.scroll_identify</id>
+	<label>Identify Scroll</label>
+	<pluralLabel>Identify Scrolls</pluralLabel>
+
+	<baseValue>180</baseValue>
+  <mass>0.1</mass>
+	<stackSize>8</stackSize>
+
+	<type>scroll</type>
+	<spawnWeight>10</spawnWeight>
+
+	<texture>core.items</texture>
+  <spriteIndex>6</spriteIndex>
+
+	<description>
+		A pargament to help identify unknown items.
+	</description>
+
+  <Useable>
+    <call>identifyItem</call>
+		<durability>1</durability>
+  </Useable>
+</Item>

@@ -1,0 +1,18 @@
+<Item>
+	<id>core.bow_wood</id>
+	<label>Wooden bow</label>
+
+	<baseValue>135</baseValue>
+	<mass>2</mass>
+	<stackSize>1</stackSize>
+
+	<type>weapon</type>
+	<spawnWeight>2</spawnWeight>
+
+	<texture>core.items</texture>
+  <spriteIndex>2</spriteIndex>
+
+	<description>
+		Pew!
+	</description>
+</Item>

@@ -1,0 +1,15 @@
+<Item>
+	<id>core.torch</id>
+	<label>Torch</label>
+	<pluralLabel>Torches</pluralLabel>
+
+	<baseValue>15</baseValue>
+	<stackSize>2</stackSize>
+
+	<texture>core.items</texture>
+  <spriteIndex>17</spriteIndex>
+
+	<description>
+		Let there be light!
+	</description>
+</Item>

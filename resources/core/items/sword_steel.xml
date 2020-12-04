@@ -1,0 +1,22 @@
+<Item>
+	<id>core.sword_steel</id>
+	<label>Steel Sword</label>
+
+	<baseValue>85</baseValue>
+  <mass>2</mass>
+	<stackSize>1</stackSize>
+
+	<type>weapon</type>
+	<spawnWeight>4</spawnWeight>
+
+	<texture>core.items</texture>
+  <spriteIndex>0</spriteIndex>
+
+	<description>
+		A piece of steel with a pointy end.
+	</description>
+
+  <Wieldable>
+    <damage>8</damage>
+  </Wieldable>
+</Item>

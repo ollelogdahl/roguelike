@@ -1,0 +1,10 @@
+<HeroClass>
+  <id>core.knight</id>
+  <label>Knight</label>
+
+  <baseHp>30</baseHp>
+  <speed>10</speed>
+
+  <texture>core.font</texture>
+  <spriteIndex>64</spriteIndex>
+</HeroClass>

@@ -1,0 +1,25 @@
+<Item>
+	<id>core.magic_mirror</id>
+	<label>Magic Mirror</label>
+
+	<baseValue>120</baseValue>
+  <mass>0.8</mass>
+	<stackSize>1</stackSize>
+
+	<type>tool</type>
+	<spawnWeight>8</spawnWeight>
+
+	<texture>core.items</texture>
+  <spriteIndex>0</spriteIndex>
+
+	<description>
+		A reflective piece of glass. Seems to have a slight purple glow.
+	</description>
+
+  <Useable>
+    <call>identifyItem</call>
+		<durability>6</durability>
+		<onBreak>core.broken_mirror</onBreak>
+
+  </Useable>
+</Item>
