@@ -275,7 +275,7 @@ DungeonCorridor randomCorridorAlongWall(DungeonRoom room, CardinalDirection dir)
   corridor.dir = dir;
   corridor.pos = pos;
 
-  std::uniform_int_distribution<int> ldistribution(1, 3);
+  std::uniform_int_distribution<int> ldistribution(1, 2);
   corridor.length = ldistribution(generator);
   return corridor;
 }
