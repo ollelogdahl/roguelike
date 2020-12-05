@@ -2,8 +2,8 @@
 ### A basic roguelike written in C++.
 Olle Lögdahl, 24 November 2018
 
+<!--![release](https://img.shields.io/github/v/release/ollelogdahl/roguelike) -->
 ![cmake](https://img.shields.io/github/workflow/status/ollelogdahl/roguelike/CMake?label=Build)
-![release](https://img.shields.io/github/v/release/ollelogdahl/roguelike)
 ![licence](https://img.shields.io/github/license/ollelogdahl/roguelike)
 ![issues](https://img.shields.io/github/issues-raw/ollelogdahl/roguelike)
 
