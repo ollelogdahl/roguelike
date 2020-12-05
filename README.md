@@ -14,6 +14,8 @@ Olle Lögdahl, 24 November 2018
 <img src="https://github.com/ollelogdahl/roguelike/blob/master/media/dungeon.png">
 </p>
 
+**NOTE**: This project is in the middle of a major rework, and is therefore broken. Come back later :)
+
 ## Installation Guide
 *Note: Only tested on linux. My codebase should be platform independent, but would need some tweaks to the cmake script.*
 ```bash
