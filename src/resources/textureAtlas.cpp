@@ -8,7 +8,7 @@ namespace TextureAtlas {
 std::vector<IdentifiedSurface> surfacesToBake = std::vector<IdentifiedSurface>();
 
 SDL_Texture* atlasTexture = nullptr;                        // Final baked texture
-Registry<SubTexture> subTextures = Registry<SubTexture>();  // Registry of baked textures
+Registry<SubTexture> textureRegistry = Registry<SubTexture>();  // Registry of baked textures
 
 bool atlasCreated;               // If atlas has been created
 const int MIN_ATLAS_SIZE = 512;  // Minimum atlas size (on both axies)
@@ -62,19 +62,21 @@ void createAtlas(SDL_Renderer* renderer) {
     // repeat
     bool placed = false;
     while (!placed) {
-      // Create new rectangle and test if it collides with existing rectangle
+      // Create new rectangle.
       SDL_Rect* r = new SDL_Rect();
       r->x = offsetX;
       r->y = offsetY;
       r->w = surfacesToBake[i].surface->w;
       r->h = surfacesToBake[i].surface->h;
 
+      // Test if it collides with any existing rectangle.
       if (!details::rectCollide(occupiedRects, *r)) {
         occupiedRects.push_back(*r);
         SDL_BlitSurface(surfacesToBake[i].surface, NULL, atlas, r);
 
-        auto subTex = SubTexture(r);
-        subTextures.registerObject(subTex, surfacesToBake[i].identifier);
+        // Allocates a new sub texture on the heap, and registers it.
+        auto subTex = std::unique_ptr<SubTexture>(new SubTexture(r));
+        textureRegistry.registerObject(std::move(subTex), surfacesToBake[i].identifier);
 
         placed = true;
       }
@@ -122,8 +124,8 @@ void createAtlas(SDL_Renderer* renderer) {
 // Rendering ----------------------------------------------------------------------------
 
 void renderTexture(SDL_Renderer* renderer, std::string textureId, int spriteIndex, Vec2 dest, int scale) {
-  auto subTex = subTextures.getObject(textureId);
-  SDL_Rect* srcRect = subTex.getSpriteRect(spriteIndex);
+  auto subTex = textureRegistry.getObject(textureId);
+  SDL_Rect* srcRect = subTex->getSpriteRect(spriteIndex);
   if (srcRect == nullptr) return;
 
   SDL_Rect destRect;
@@ -148,7 +150,7 @@ SubTexture::SubTexture(SDL_Rect *r) : textureRect(r) {}
 SubTexture::SubTexture() : textureRect(nullptr) {}
 
 SubTexture::~SubTexture() {
-  //delete textureRect;
+  delete textureRect;
 }
 
 SDL_Rect *SubTexture::getSpriteRect(int spriteIndex) {

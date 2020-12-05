@@ -2,7 +2,8 @@
 
 #include <string>
 
-#include "pugixml.hpp"
+#include <memory>
+#include <pugixml.hpp>
 
 #include "math/vec2.h"
 
@@ -20,5 +21,5 @@ public:
   int spriteIndex;
 
   // Load item definition in XML node representing an item
-  static Item fromXML(pugi::xml_node node);
+  static std::unique_ptr<Item> fromXML(pugi::xml_node node);
 };

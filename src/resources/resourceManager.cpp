@@ -4,13 +4,9 @@
 #include <iostream>
 
 #include <easylogging/easylogging++.h>
-#include "pugixml.hpp"
 #include "textureAtlas.h"
 
 namespace ResourceManager {
-Registry<Item> itemRegistry = Registry<Item>();
-Registry<Breed> breedRegistry = Registry<Breed>();
-Registry<HeroClass> heroClassRegistry = Registry<HeroClass>();
 
 void registerXmlResource(std::string path) {
   // Parsear XML dokumentet
@@ -26,32 +22,10 @@ void registerXmlResource(std::string path) {
   // Loads all definitions
   LOG(DEBUG) << "Searching " << path;
 
-  for (pugi::xml_node node = document.child("Item"); node; node = node.next_sibling("Item")) {
-    // de-serialiserar ett object av node
-    std::string id = node.child_value("id");
-    Item object = Item::fromXML(node);
-
-    // Lägger till till itemRegistry
-    itemRegistry.registerObject(object, id);
-  }
-
-  for (pugi::xml_node node = document.child("Breed"); node; node = node.next_sibling("Breed")) {
-    // de-serialiserar ett object av node
-    std::string id = node.child_value("id");
-    Breed object = Breed::fromXML(node);
-
-    // Lägger till till itemRegistry
-    breedRegistry.registerObject(object, id);
-  }
-
-  for (pugi::xml_node node = document.child("HeroClass"); node; node = node.next_sibling("HeroClass")) {
-    // de-serialiserar ett object av node
-    std::string id = node.child_value("id");
-    HeroClass object = HeroClass::fromXML(node);
-
-    // Lägger till till itemRegistry
-    heroClassRegistry.registerObject(object, id);
-  }
+  // Register
+  registerAllOfType(document, itemRegistry, "Item");
+  registerAllOfType(document, breedRegistry, "Breed");
+  registerAllOfType(document, heroClassRegistry, "HeroClass");
 
   for (pugi::xml_node node = document.child("Texture"); node; node = node.next_sibling("Texture")) {
     std::string id = node.child_value("id");
@@ -85,6 +59,20 @@ std::vector<std::string> getResources(std::string path, std::string ext) {
   return resources;
 }
 
+template<class T>
+void registerAllOfType(pugi::xml_document& document, Registry<T>& reg, const std::string& typeName) {
+  
+  for (pugi::xml_node node = document.child(typeName.c_str()); node; 
+       node = node.next_sibling(typeName.c_str())) {
+    // Gets the id of the node.
+    std::string id = node.child_value("id");
+    // Calls the fromXML function of T, given the current node.
+    auto object = T::fromXML(node);
+
+    reg.registerObject(std::move(object), id);
+  }
+}
+
 void loadAllResources(std::string path) {
   std::vector<std::string> xmlResources;
   std::vector<std::string> pngResources;
@@ -104,15 +92,4 @@ void loadAllResources(std::string path) {
   LOG(INFO) << "   " << breedRegistry.getSize() << " breeds loaded.";
   LOG(INFO) << "   " << breedRegistry.getSize() << " hero classes loaded.";
 }
-
-Item getItem(std::string id) {
-  return itemRegistry.getObject(id);
-}
-Breed getBreed(std::string id) {
-  return breedRegistry.getObject(id);
-}
-HeroClass getHeroClass(std::string id) {
-  return heroClassRegistry.getObject(id);
-}
-
 }  // namespace ResourceManager
