@@ -1,5 +1,5 @@
 # roguelike
-### A basic roguelike written in C++.
+### A basic roguelike written in C++
 Olle Lögdahl, 24 November 2018
 
 <!--![release](https://img.shields.io/github/v/release/ollelogdahl/roguelike) -->
