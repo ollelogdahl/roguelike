@@ -13,3 +13,18 @@ Olle Lögdahl, 24 November 2018
 <p align="center">
 <img src="https://github.com/ollelogdahl/roguelike/blob/master/media/dungeon.png">
 </p>
+
+## Installation Guide
+*Note: Only tested on linux. My codebase should be platform independent, but would need some tweaks to the cmake script.*
+```bash
+git clone https://github.com/ollelogdahl/roguelike.git
+cd roguelike
+mkdir build
+cd build
+cmake .. && make -j4
+```
+
+## Dependencies
+ * [SDL2](https://www.libsdl.org/download-2.0.php)
+ * [SDL2 - Image](https://www.libsdl.org/projects/SDL_image/)
+ * [pugixml](https://pugixml.org/)
