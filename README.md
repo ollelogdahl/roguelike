@@ -8,7 +8,7 @@ Olle Lögdahl, 24 November 2018
 ![issues](https://img.shields.io/github/issues-raw/ollelogdahl/roguelike)
 
 ---
-**roguelike** is a C++ game, inspired by rogue and NetHack. Implements a custom engine, xml resource loading, texture atlasing, and more.
+**roguelike** is a C++ game, inspired by rogue and NetHack. Implements a custom engine, xml resource loading, texture atlasing, dungeon generation and more.
 
 <p align="center">
 <img src="https://github.com/ollelogdahl/roguelike/blob/master/media/dungeon.png">
