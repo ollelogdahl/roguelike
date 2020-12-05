@@ -30,8 +30,8 @@ void renderText(std::string text, int scale, Vec2 pos) {
 
 void renderItem(const ItemEntity *entity) {
   Vec2 pos = entity->pos * 16;
-  TextureAtlas::renderTexture(renderer, entity->itemStack.item.texture,
-                              entity->itemStack.item.spriteIndex, pos, 16);
+  TextureAtlas::renderTexture(renderer, entity->itemStack.item->texture,
+                              entity->itemStack.item->spriteIndex, pos, 16);
 }
 
 void renderTilemap(const Map &map) {

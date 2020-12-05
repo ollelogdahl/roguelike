@@ -6,19 +6,19 @@
 #include "item.h"
 
 struct ItemStack {
-  Item item;
+  std::shared_ptr<Item> item;
   int itemCount;
 
   ItemStack(std::string id, int count) {
-    item = ResourceManager::getItem(id);
-    if (count > item.stackSize)
-      itemCount = item.stackSize;
+    item = ResourceManager::itemRegistry.getObject(id);
+    if (count > item->stackSize)
+      itemCount = item->stackSize;
     else
       itemCount = count;
   }
 
   ItemStack(std::string id) {
-    item = ResourceManager::getItem(id);
-    itemCount = item.stackSize;
+    item = ResourceManager::itemRegistry.getObject(id);
+    itemCount = item->stackSize;
   }
 };

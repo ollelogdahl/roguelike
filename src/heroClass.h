@@ -1,6 +1,7 @@
 #pragma once
 
-#include "pugixml.hpp"
+#include <pugixml.hpp>
+#include <memory>
 
 #include "math/vec2.h"
 
@@ -14,5 +15,5 @@ public:
   std::string texture;
   int spriteIndex;
 
-  static HeroClass fromXML(pugi::xml_node node);
+  static std::unique_ptr<HeroClass> fromXML(pugi::xml_node node);
 };

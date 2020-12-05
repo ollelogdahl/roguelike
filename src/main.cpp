@@ -25,25 +25,28 @@ int main() {
   el::Configurations conf("loggerConfig.conf");
   el::Loggers::reconfigureAllLoggers(conf);
 
-  // info i dbg
   std::cout << " Roguelike " << app_VERSION << std::endl;
   std::cout << "------------------" << std::endl;
 
-  // Initiera SDL och fönster
+
+
+  // Initialize SDL and window
   if (SDLHandler::initWindow(SCREEN_WIDTH, SCREEN_HEIGHT) == 1) return 1;
   SDL_Renderer *renderer = SDLHandler::getRenderer();
 
+  // Initialize engine
+  Engine engine = Engine();
+  LOG(INFO) << "Engine initialized.";
+
   // Load all resources, and compile a texture atlas.
-  ResourceManager::loadAllResources("resources/core");
-  LOG(INFO) << "Resources loaded!";
+  auto resman = ResourceManager(engine);
+  resman.loadAllResources("resources/core");
+  LOG(INFO) << "Resources loaded.";
 
   TextureAtlas::createAtlas(renderer);
-  LOG(INFO) << "Texture Atlas created!";
+  LOG(INFO) << "Texture Atlas created.";
 
-  // Initiera engine
-  Engine engine = Engine();
   engine.init();
-  LOG(INFO) << "Engine initialized.";
 
   engine.gameLoop();
 

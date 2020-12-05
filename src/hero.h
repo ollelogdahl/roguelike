@@ -13,5 +13,5 @@ public:
   Action *getAction() override;
 
 private:
-  HeroClass heroClass;
+  std::shared_ptr<HeroClass> heroClass;
 };

@@ -2,11 +2,12 @@
 
 #include <filesystem>
 #include <iostream>
-
 #include <easylogging/easylogging++.h>
-#include "textureAtlas.h"
 
-namespace ResourceManager {
+#include "item.h"
+#include "breed.h"
+#include "heroClass.h"
+#include "textureAtlas.h"
 
 void registerXmlResource(std::string path) {
   // Parsear XML dokumentet
@@ -88,8 +89,8 @@ void loadAllResources(std::string path) {
     registerXmlResource(resource);
   }
 
-  LOG(INFO) << "   " << itemRegistry.getSize() << " items loaded.";
-  LOG(INFO) << "   " << breedRegistry.getSize() << " breeds loaded.";
-  LOG(INFO) << "   " << breedRegistry.getSize() << " hero classes loaded.";
+  LOG(INFO) << "   " << engine.itemRegistry.getSize() << " items loaded.";
+  LOG(INFO) << "   " << engine.breedRegistry.getSize() << " breeds loaded.";
+  LOG(INFO) << "   " << engine.heroClassRegistry.getSize() << " hero classes loaded.";
 }
 }  // namespace ResourceManager

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #include "actor.h"
 #include "breed.h"
 
@@ -13,5 +15,5 @@ public:
   Action *getAction() override;
 
 private:
-  Breed breed;
+  std::shared_ptr<Breed> breed;
 };

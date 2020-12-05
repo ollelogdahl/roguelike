@@ -12,14 +12,14 @@
 
 Hero::Hero(const std::string heroClassId, Vec2 position)
     : Actor(position),
-      heroClass(ResourceManager::getHeroClass(heroClassId)) {}
+      heroClass(ResourceManager::heroClassRegistry.getObject(heroClassId)) {}
 
 void Hero::render(SDL_Renderer *renderer) {
-  TextureAtlas::renderTexture(renderer, heroClass.texture, heroClass.spriteIndex, pos * 16, 16);
+  TextureAtlas::renderTexture(renderer, heroClass->texture, heroClass->spriteIndex, pos * 16, 16);
 }
 
 void Hero::gainEnergy() {
-  energy += heroClass.speed;
+  energy += heroClass->speed;
 }
 
 // Handle user input to determine wanted action

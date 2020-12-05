@@ -37,7 +37,7 @@ namespace TextureAtlas {
   // Adds a texture (.png) to be baked into texture atlas.
   void addTextureFile(std::string id, std::string path);
 
-  // Bakes all linked files into texture atlas. (Procedural size)
+  // Bakes all linked files into texture atlas. (Procedural size).
   void createAtlas(SDL_Renderer *renderer);
 
   // Renders a part of the atlas to the renderers buffer.

@@ -6,6 +6,8 @@
 
 #include "actor.h"
 #include "game.h"
+#include "resources/registry.h"
+
 class Engine {
 public:
   Engine() = default;
@@ -18,6 +20,12 @@ public:
   void process();
 
   void gameLoop();
+
+  // Registries
+  Registry<Item> itemRegistry = Registry<Item>();
+  Registry<Breed> breedRegistry = Registry<Breed>();
+  Registry<HeroClass> heroClassRegistry = Registry<HeroClass>();
+
 private:
   // Unique reference to the game.
   std::unique_ptr<Game> game = nullptr;

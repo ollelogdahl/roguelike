@@ -1,8 +1,9 @@
 #pragma once
 
+#include <pugixml.hpp>
 #include <string>
+#include <memory>
 
-#include "pugixml.hpp"
 #include "math/vec2.h"
 
 struct Breed {
@@ -14,5 +15,5 @@ struct Breed {
   std::string texture;
   int spriteIndex;
 
-  static Breed fromXML(pugi::xml_node node);
+  static std::unique_ptr<Breed> fromXML(pugi::xml_node node);
 };

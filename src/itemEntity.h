@@ -13,8 +13,8 @@ struct ItemEntity {
 
   std::string toString() {
     std::string name = (itemStack.itemCount > 1)
-                           ? itemStack.item.pluralName
-                           : itemStack.item.name;
+                           ? itemStack.item->pluralName
+                           : itemStack.item->name;
     return std::to_string(itemStack.itemCount) + " " + name;
   }
 
