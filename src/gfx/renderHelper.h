@@ -10,7 +10,6 @@
 #include "world/map.h"
 
 namespace RenderHelper {
-    blabla
   void setup(SDL_Renderer* renderer);
   
   void renderText(std::string text, int scale, Vec2 pos);
