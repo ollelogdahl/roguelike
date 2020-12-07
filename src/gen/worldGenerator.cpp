@@ -2,11 +2,10 @@
 
 #include <map>
 #include <random>
+#include <easylogging/easylogging++.h>
 
 #include "layoutGenerator.h"
 #include "math/rect2.h"
-
-#include <easylogging/easylogging++.h>
 
 namespace WorldGenerator {
 

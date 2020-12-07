@@ -1,6 +1,6 @@
 #pragma once
 
-#include "direction.h"
+#include "math/direction.h"
 #include "math/vec2.h"
 #include "math/rect2.h"
 

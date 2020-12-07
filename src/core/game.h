@@ -2,12 +2,12 @@
 
 #include <vector>
 
-#include "actor.h"
+#include "world/actor.h"
 #include "gameLevel.h"
-#include "hero.h"
-#include "itemEntity.h"
-#include "map.h"
-#include "worldGenerator.h"
+#include "world/hero.h"
+#include "world/itemEntity.h"
+#include "world/map.h"
+#include "gen/worldGenerator.h"
 
 // A wrapper for the current gameLevel. Also contains the hero actor.
 class Game {

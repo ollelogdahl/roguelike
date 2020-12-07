@@ -1,12 +1,12 @@
 #include "hero.h"
 
-#include "direction.h"
 #include <easylogging/easylogging++.h>
-#include "keyboard.h"
-#include "walkAction.h"
-#include "closeDoorAction.h"
-#include "pickupItemAction.h"
 
+#include "math/direction.h"
+#include "core/keyboard.h"
+#include "actions/walkAction.h"
+#include "actions/closeDoorAction.h"
+#include "actions/pickupItemAction.h"
 #include "resources/resourceManager.h"
 #include "resources/textureAtlas.h"
 

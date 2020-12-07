@@ -3,8 +3,7 @@
 #include <SDL2/SDL.h>
 
 #include "math/vec2.h"
-
-#include "inventory.h"
+#include "core/inventory.h"
 
 class Action;
 class Actor {

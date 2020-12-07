@@ -9,13 +9,8 @@
 // NOTE! All item entities should be allocated on heap.
 struct ItemEntity {
     ItemStack itemStack;
+    Vec2 pos;
 
-  Vec2 pos;
-
-  std::string toString() {
-    std::string name = (itemStack.itemCount > 1)
-                           ? itemStack.item->pluralName
-                           : itemStack.item->name;
-    return std::to_string(itemStack.itemCount) + " " + name;
-  }
+    // Coverts the itementity to a string (to be printed).
+    std::string toString();
 };

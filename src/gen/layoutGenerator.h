@@ -4,11 +4,11 @@
 #include <random>
 #include <vector>
 
-#include "direction.h"
+#include "math/direction.h"
 #include "dungeonCorridor.h"
 #include "dungeonLayout.h"
 #include "dungeonRoom.h"
-#include "map.h"
+#include "world/map.h"
 #include "math/rect2.h"
 #include "math/vec2.h"
 

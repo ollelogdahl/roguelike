@@ -3,8 +3,8 @@
 #include <random>
 
 #include "dungeonLayout.h"
-#include "map.h"
-#include "gameLevel.h"
+#include "world/map.h"
+#include "core/gameLevel.h"
 
 namespace WorldGenerator {
 class DungeonDecorator {

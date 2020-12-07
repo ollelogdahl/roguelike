@@ -5,9 +5,9 @@
 #include <SDL2/SDL.h>
 
 #include "math/vec2.h"
-#include "itemEntity.h"
-#include "actor.h"
-#include "map.h"
+#include "world/itemEntity.h"
+#include "world/actor.h"
+#include "world/map.h"
 
 namespace RenderHelper {
   void setup(SDL_Renderer* renderer);

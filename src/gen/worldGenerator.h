@@ -1,11 +1,11 @@
 #pragma once
 
-#include "map.h"
-#include "item.h"
+#include "world/map.h"
+#include "world/item.h"
 
 #include "dungeonLayout.h"
 #include "dungeonGenerationStyle.h"
-#include "gameLevel.h"
+#include "core/gameLevel.h"
 
 namespace WorldGenerator {
 

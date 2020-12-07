@@ -2,7 +2,7 @@
 
 #include "action.h"
 #include "actionResult.h"
-#include "direction.h"
+#include "math/direction.h"
 #include "game.h"
 #include "math/vec2.h"
 

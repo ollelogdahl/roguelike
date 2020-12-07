@@ -1,15 +1,14 @@
 #include "engine.h"
 
 #include <iostream>
-
-#include "action.h"
-#include "actionResult.h"
 #include <easylogging/easylogging++.h>
-#include "monster.h"
-#include "sdlHandler.h"
-#include "keyboard.h"
 
-#include "renderHelper.h"
+#include "actions/action.h"
+#include "actions/actionResult.h"
+#include "world/monster.h"
+#include "gfx/sdlHandler.h"
+#include "gfx/renderHelper.h"
+#include "keyboard.h"
 
 void Engine::init() {
   // Initialize keyboard

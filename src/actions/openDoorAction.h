@@ -1,7 +1,7 @@
 #pragma once
 
 #include "action.h"
-#include "direction.h"
+#include "math/direction.h"
 #include "actionResult.h"
 
 class OpenDoorAction : public Action {

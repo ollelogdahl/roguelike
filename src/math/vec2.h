@@ -1,6 +1,6 @@
 #pragma once
 
-#include "direction.h"
+#include "math/direction.h"
 #include "pugixml.hpp"
 
 struct Vec2 {

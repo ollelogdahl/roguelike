@@ -4,9 +4,9 @@
 #include <memory>
 #include <SDL2/SDL.h>
 
-#include "actor.h"
-#include "game.h"
+#include "world/actor.h"
 #include "resources/registry.h"
+#include "game.h"
 
 class Engine {
 public:

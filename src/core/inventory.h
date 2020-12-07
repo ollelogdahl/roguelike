@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "itemStack.h"
+#include "world/itemStack.h"
 
 class Inventory {
 public:
