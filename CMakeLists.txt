@@ -50,31 +50,36 @@ add_executable(roguelike
     src/resources/resourceManager.cpp
     src/resources/textureAtlas.cpp
 
-    src/actionResult.cpp
-    src/actor.cpp
-    src/attackAction.cpp
-    src/breed.cpp
-    src/closeDoorAction.cpp
-    src/descendAction.cpp
-    src/dungeonDecorator.cpp
-    src/dungeonLayout.cpp
-    src/engine.cpp
-    src/game.cpp
-    src/hero.cpp
-    src/heroClass.cpp
-    src/inventory.cpp
-    src/item.cpp
-    src/keyboard.cpp
-    src/layoutGenerator.cpp
+    src/actions/walkAction.cpp
+    src/actions/actionResult.cpp
+    src/actions/attackAction.cpp
+    src/actions/closeDoorAction.cpp
+    src/actions/descendAction.cpp
+    src/actions/openDoorAction.cpp
+    src/actions/pickupItemAction.cpp
+
+    src/world/actor.cpp
+    src/world/breed.cpp
+    src/world/hero.cpp
+    src/world/hero.cpp
+    src/world/map.cpp
+    src/world/monster.cpp
+    src/world/heroClass.cpp
+
+    src/core/engine.cpp
+    src/core/game.cpp
+    src/core/inventory.cpp
+    src/core/keyboard.cpp
+
+    src/gen/dungeonDecorator.cpp
+    src/gen/dungeonLayout.cpp
+    src/gen/layoutGenerator.cpp
+    src/gen/worldGenerator.cpp
+
+    src/gfx/renderHelper.cpp
+    src/gfx/sdlHandler.cpp
+
     src/main.cpp
-    src/map.cpp
-    src/monster.cpp
-    src/openDoorAction.cpp
-    src/pickupItemAction.cpp
-    src/renderHelper.cpp
-    src/sdlHandler.cpp
-    src/walkAction.cpp
-    src/worldGenerator.cpp
 )
 
 target_precompile_headers(roguelike PRIVATE src/pch.h)
