@@ -9,6 +9,7 @@
 #include "map.h"
 #include "worldGenerator.h"
 
+// A wrapper for the current gameLevel. Also contains the hero actor.
 class Game {
 public:
   Game();
@@ -26,24 +27,20 @@ public:
   // Adds a new actor to the current level
   void addActor(std::unique_ptr<Actor> actor);
   // Adds a new item entity to the current level
-  void addItem(ItemEntity* item);
+  void addItem(std::unique_ptr<ItemEntity> item);
 
   // Returns the actor on current level at pos. Returns nullptr if none.
-  Actor* actorAt(Vec2 pos);
+  std::unique_ptr<Actor> actorAt(Vec2 pos);
   // Returns the item entity on current level at pos. Returns nullptr if none.
-  ItemEntity* itemAt(Vec2 pos);
+  std::unique_ptr<ItemEntity> itemAt(Vec2 pos);
 
   // Returns the tile index at pos. Returns -1 if tile outside level.
   int tileAt(Vec2 pos);
-
-  // Helper methods for gameLevel
-  const std::vector<ItemEntity*>& getItems();
-  const std::vector<std::unique_ptr<Actor>>& getActors();
 
   Hero* getPlayer();
   Map& getMap();
 
  private:
-  Hero* player;
+  std::unique_ptr<Hero> player;
   GameLevel level;
 };

@@ -12,7 +12,7 @@
 
 Hero::Hero(const std::string heroClassId, Vec2 position)
     : Actor(position),
-      heroClass(ResourceManager::heroClassRegistry.getObject(heroClassId)) {}
+      heroClass(ResourceParser::heroClassRegistry.getObject(heroClassId)) {}
 
 void Hero::render(SDL_Renderer *renderer) {
   TextureAtlas::renderTexture(renderer, heroClass->texture, heroClass->spriteIndex, pos * 16, 16);

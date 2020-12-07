@@ -39,7 +39,7 @@ int main() {
   LOG(INFO) << "Engine initialized.";
 
   // Load all resources, and compile a texture atlas.
-  auto resman = ResourceManager(engine);
+  auto resman = ResourceParser(engine);
   resman.loadAllResources("resources/core");
   LOG(INFO) << "Resources loaded.";
 

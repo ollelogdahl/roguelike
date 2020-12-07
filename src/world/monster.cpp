@@ -6,7 +6,7 @@
 #include "walkAction.h"
 
 Monster::Monster(std::string breedId, Vec2 position) : Actor(position) {
-  breed = ResourceManager::breedRegistry.getObject(breedId);
+  breed = ResourceParser::breedRegistry.getObject(breedId);
   health = breed->baseHp;
 }
 

@@ -121,6 +121,10 @@ void createAtlas(SDL_Renderer* renderer) {
   }
 }  // createAtlas
 
+void packAtlas(SDL_Renderer* renderer, ) {
+
+}
+
 // Rendering ----------------------------------------------------------------------------
 
 void renderTexture(SDL_Renderer* renderer, std::string textureId, int spriteIndex, Vec2 dest, int scale) {

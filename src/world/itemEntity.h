@@ -6,8 +6,9 @@
 #include "resources/resourceManager.h"
 #include "resources/textureAtlas.h"
 
+// NOTE! All item entities should be allocated on heap.
 struct ItemEntity {
-  ItemStack itemStack;
+    ItemStack itemStack;
 
   Vec2 pos;
 
@@ -17,7 +18,4 @@ struct ItemEntity {
                            : itemStack.item->name;
     return std::to_string(itemStack.itemCount) + " " + name;
   }
-
-  ItemEntity(std::string id, int count, int x, int y)
-   : itemStack(id, count), pos(x, y) {}
 };

@@ -9,7 +9,7 @@
 #include "heroClass.h"
 #include "textureAtlas.h"
 
-void registerXmlResource(std::string path) {
+void ResourceParser::registerXmlResource(std::string path) {
   // Parsear XML dokumentet
   pugi::xml_document document;
   pugi::xml_parse_result result = document.load_file(path.c_str());
@@ -23,12 +23,14 @@ void registerXmlResource(std::string path) {
   // Loads all definitions
   LOG(DEBUG) << "Searching " << path;
 
-  // Register
-  registerAllOfType(document, itemRegistry, "Item");
-  registerAllOfType(document, breedRegistry, "Breed");
-  registerAllOfType(document, heroClassRegistry, "HeroClass");
+  // Register all type definitions.
+  registerAllOfType(document, engine.itemRegistry, "Item");
+  registerAllOfType(document, engine.breedRegistry, "Breed");
+  registerAllOfType(document, engine.heroClassRegistry, "HeroClass");
 
-  for (pugi::xml_node node = document.child("Texture"); node; node = node.next_sibling("Texture")) {
+  for (pugi::xml_node node = document.child("Texture"); node; 
+       node = node.next_sibling("Texture")) {
+    
     std::string id = node.child_value("id");
     std::string filePath = node.child_value("path");
 
@@ -40,9 +42,11 @@ void registerXmlResource(std::string path) {
 }
 
 // Finds all resource files.
-std::vector<std::string> getResources(std::string path, std::string ext) {
+std::vector<std::string> ResourceParser::getResources(std::string path, 
+  std::string ext) {
+  
+  // List of all resource filenames.
   std::vector<std::string> resources = std::vector<std::string>();
-
 
   // Makes sure the directory given exists.
   if(!std::filesystem::exists(path)) {
@@ -61,7 +65,8 @@ std::vector<std::string> getResources(std::string path, std::string ext) {
 }
 
 template<class T>
-void registerAllOfType(pugi::xml_document& document, Registry<T>& reg, const std::string& typeName) {
+void ResourceParser::registerAllOfType(const pugi::xml_document& document, 
+  Registry<T>& reg, const std::string& typeName) {
   
   for (pugi::xml_node node = document.child(typeName.c_str()); node; 
        node = node.next_sibling(typeName.c_str())) {
@@ -74,7 +79,7 @@ void registerAllOfType(pugi::xml_document& document, Registry<T>& reg, const std
   }
 }
 
-void loadAllResources(std::string path) {
+void ResourceParser::loadAllResources(std::string path) {
   std::vector<std::string> xmlResources;
   std::vector<std::string> pngResources;
 
@@ -82,15 +87,15 @@ void loadAllResources(std::string path) {
   xmlResources = getResources(path, ".xml");
   int resourceCount = xmlResources.size();
 
-  LOG(INFO) << "   " << resourceCount << " resources found.";
+  LOG(INFO) << "   " << resourceCount << " resource files found.";
 
   // Register XML resources -------------------------------------------------------------
   for (auto resource : xmlResources) {
     registerXmlResource(resource);
   }
 
+  // Add some logging to the 
   LOG(INFO) << "   " << engine.itemRegistry.getSize() << " items loaded.";
   LOG(INFO) << "   " << engine.breedRegistry.getSize() << " breeds loaded.";
   LOG(INFO) << "   " << engine.heroClassRegistry.getSize() << " hero classes loaded.";
 }
-}  // namespace ResourceManager
